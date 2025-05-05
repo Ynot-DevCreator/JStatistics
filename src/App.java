@@ -16,7 +16,6 @@ public class App {
     do {
            int op = Integer.parseInt(JOptionPane.showInputDialog("Digite a Opção: \n1-Estatística Descritiva \n2-Probabilidade \n3-Modelos Probabilísticos"));
     //!= diferente
-    if (op!=4) {
             switch (op) {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Estatística Descritiva");
@@ -30,12 +29,11 @@ public class App {
                 default:
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
                     break;
-        }    
-    } else {
-        JOptionPane.showMessageDialog(null, "Encerrando Sistema");
-    }
+            }    
     Cont = JOptionPane.showInputDialog("Deseja Continuar? (S-Sim N-Não)");
 } while (Cont.equalsIgnoreCase("S"));
+
+    JOptionPane.showMessageDialog(null, "Encerrando Sistema...");
 
     /*
     int contador = 1;
