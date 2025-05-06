@@ -12,10 +12,13 @@ public class App {
            //opcao1
            //opcao2
     
-    String Cont;
+    String cont;
     do {
-           int op = Integer.parseInt(JOptionPane.showInputDialog("Digite a Opção: \n1-Estatística Descritiva \n2-Probabilidade \n3-Modelos Probabilísticos"));
-    //!= diferente
+            int op = Integer.parseInt(JOptionPane.showInputDialog("Digite a Opção: \n1-Estatística Descritiva \n2-Probabilidade \n3-Modelos Probabilísticos \n 4-Sair"));
+    //!= diferente    
+            if (op == 4) {
+                break; // quebra do loop
+            }
             switch (op) {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Estatística Descritiva");
@@ -30,8 +33,8 @@ public class App {
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
                     break;
             }    
-    Cont = JOptionPane.showInputDialog("Deseja Continuar? (S-Sim N-Não)");
-} while (Cont.equalsIgnoreCase("S"));
+    cont = JOptionPane.showInputDialog("Deseja Continuar? (S-Sim N-Não)");
+} while (cont.equalsIgnoreCase("S"));
 
     JOptionPane.showMessageDialog(null, "Encerrando Sistema...");
 
