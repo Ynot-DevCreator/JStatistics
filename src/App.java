@@ -37,6 +37,11 @@ public class App {
 
         }
         
-
+        /* Faça um jogo de lançar dados similar ao jogo do cara ou coroa.
+         * Estudar, pesquisar e escolher um dos métodos estatísticos
+         * 
+         * -P(A) - calculo simples
+         * -Teorema de Bayes, avançado
+         */
     }
 }
