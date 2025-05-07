@@ -24,7 +24,7 @@ public class App {
                 break;
             }
             int resultado = random.nextInt(6);
-            switch (resultado) {
+            switch (resultado + 1) {
                 case 1:
                     cont1++;
                     break;
