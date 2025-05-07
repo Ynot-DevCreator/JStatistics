@@ -17,14 +17,10 @@ public class App {
         while (true) {
             int opcao = JOptionPane.showConfirmDialog(null, messagem, "Lançamento de Dados", JOptionPane.YES_NO_OPTION);     
             if (opcao != JOptionPane.YES_OPTION) {
-                String estatisticas = "Jogo Finalizado!\n Total de Lançamentos: "+(cont1+cont2+cont3+cont4+cont5+cont6)+
-                "\nLado Um: "+cont1+
-                "\nLado Dois: "+cont2+
-                "\nLado Três: "+cont3+
-                "\nLado Quatro: "+cont4+
-                "\nLado Cinco: "+cont5+
+                String estatisticas = "Jogo Finalizado!\n Total de Lançamentos: "+(cont1+cont2+cont3+cont4+cont5+cont6)+"\nLado Um: "+cont1+"\nLado Dois: "+cont2+"\nLado Três: "+cont3+"\nLado Quatro: "+cont4+"\nLado Cinco: "+cont5+
                 "\nLado Seis: "+cont6;
                 JOptionPane.showMessageDialog(null,estatisticas, "Resultado Final", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Saindo...");
                 break;
             }
             int resultado = random.nextInt(6);
