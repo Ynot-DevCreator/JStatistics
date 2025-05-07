@@ -12,7 +12,7 @@ public class App {
         int cont4 = 0;
         int cont5 = 0;
         int cont6 = 0;
-        String messagem = "Deseja lançar os dados? ";
+        String messagem = "-------------------------------------------------------------------------\nProbabilidade de 16.67% para qualquer lado do dado\n-------------------------------------------------------------------------\nDeseja lançar os dados?";
         Random random = new Random();
         while (true) {
             int opcao = JOptionPane.showConfirmDialog(null, messagem, "Lançamento de Dados", JOptionPane.YES_NO_OPTION);     
