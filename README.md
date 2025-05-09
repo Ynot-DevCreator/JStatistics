@@ -22,7 +22,7 @@ Se você não tem o Java instalado, você pode baixá-lo no site oficial [aqui](
 ## 📂 Estrutura do Projeto
 
 - **JStatistics.jar**: O arquivo executável do jogo.
-- **App.java**: O código fonte do jogo.
+- **Source code(zip)**: Para ter acesso ao código fonte do jogo.
 
 ## 💬 Feedback
 
