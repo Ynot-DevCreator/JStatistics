@@ -8,8 +8,8 @@ O jogo utiliza a **probabilidade** para mostrar a distribuição dos resultados 
 
 ## ▶️ Como Jogar
 
-1. **Faça o download do arquivo projetogit.jar** na [última versão](https://github.com/Ynot-DevCreator/JStatistics/releases/tag/v1.0).
-2. **Execute o arquivo** dando um duplo clique sobre ele.
+1. **Faça o download do arquivo Instalar.Jogo.de.Dados.exe** na [última versão](https://github.com/Ynot-DevCreator/JStatistics/releases/tag/v2.0).
+2. **Execute o arquivo** dando um duplo clique sobre ele. E em seguida siga as etapas necessárias
 3. O jogo vai começar, e você verá o lançamento do dado e as estatísticas sendo atualizadas conforme você joga.
 4. O objetivo é ver como os resultados se distribuem ao longo dos lançamentos!
 
@@ -21,8 +21,8 @@ Se você não tem o Java instalado, você pode baixá-lo no site oficial [aqui](
 
 ## 📂 Estrutura do Projeto
 
-- **projetogit.jar**: O arquivo executável do jogo.
-- **App.java**: O código fonte do jogo.
+- **JStatistics.jar**: O arquivo executável do jogo.
+- **Source code(zip)**: Para ter acesso ao código fonte do jogo.
 
 ## 💬 Feedback
 
