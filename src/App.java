@@ -99,10 +99,11 @@ public class App {
         // Exibe a janela
         grafico.setVisible(true);
         int fidel = JOptionPane.showConfirmDialog(null, "Possui Cadastro de Fidelidade na Empresa? ");
+        String servcontratados = "\nServiço(s) Contratado(s):\nAdubação: "+qtdAdubacao+"\nPoda: "+qtdPoda+"\nManutenção: "+qtdManutencao+"\nPlantio: "+qtdPlantio;
         if (fidel == JOptionPane.YES_OPTION) {
-            desconto = "Quantidade de Serviços Contratados: "+contServ+"\nValor Total: R$"+soma+"\nDesconto de: R$-"+desc+"\nValor Total com Desconto: R$"+descsoma;
+            desconto = "Quantidade de Serviços Contratados: "+contServ+servcontratados+"\nValor Total: R$"+soma+"\nDesconto de: R$-"+desc+"\nValor Total com Desconto: R$"+descsoma;
         }else{
-            desconto = "Quantidade de Serviços Contratados: "+contServ+"\nValor Total: R$"+soma;
+            desconto = "Quantidade de Serviços Contratados: "+contServ+servcontratados+"\nValor Total: R$"+soma;
         }
         JOptionPane.showMessageDialog(null, desconto);
         double mediaArea = somaArea/areas;
@@ -141,14 +142,15 @@ public class App {
         }
         JOptionPane.showMessageDialog(null, "Moda das Áreas: " + String.format("%.2f", moda)+"m²");
         JOptionPane.showMessageDialog(null, ordenadas.toString()+"\nMediana: "+mediana+"m²");
-        JOptionPane.showMessageDialog(null, "A média das Áreas: "+String.format("%.2f",mediaArea)+"m²"+"\nÁreas Grandes: "+areasGrandes+"\nÁreas Pequenas: "+areasPequenas+"\nValor Mínimo: "+minimo+"\nValor Máximo: "+maximo);
+        JOptionPane.showMessageDialog(null, "A média das Áreas: "+String.format("%.2f",mediaArea)+"m²"+"\nÁreas Grandes: "+areasGrandes+"\nÁreas Pequenas: "+areasPequenas+"\nValor Mínimo: "+minimo+"m²"+"\nValor Máximo: "+maximo+"m²");
         String relatorioFinal = "-----------------Relatório Final-----------------\nNome do Cliente: "+nome+"\nEndereço: "+endereco+"\n"+todasAreas+"\n"+desconto+
         "\nModa das Áreas: " + String.format("%.2f", moda)+"m²"+
         "\n"+ordenadas.toString()+"\nMediana: "+mediana+"m²"+
-        "\nA média das Áreas: "+String.format("%.2f",mediaArea)+"m²"+"\nÁreas Grandes: "+areasGrandes+"\nÁreas Pequenas: "+areasPequenas+"\nValor Mínimo: "+minimo+"\nValor Máximo: "+maximo;
-        JOptionPane.showMessageDialog(null,relatorioFinal);
-        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("Estatisticas.txt"), StandardCharsets.UTF_8))){
-                    JOptionPane.showMessageDialog(null, "As Estatísticas do Jogo foram salvas no Arquivo Estatisticas.txt", "Obrigado por Jogar!", JOptionPane.INFORMATION_MESSAGE);
+        "\nA média das Áreas: "+String.format("%.2f",mediaArea)+"m²"+"\nÁreas Grandes: "+areasGrandes+"\nÁreas Pequenas: "+areasPequenas+"\nValor Mínimo: "+minimo+"m²"+"\nValor Máximo: "+maximo+"m²"
+        ;
+        JOptionPane.showMessageDialog(null,relatorioFinal, "Relatório Final", JOptionPane.INFORMATION_MESSAGE);
+        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("RelatorioFinal.txt"), StandardCharsets.UTF_8))){
+                    JOptionPane.showMessageDialog(null, "As Estatísticas do Jogo foram salvas no Arquivo RelatorioFinal.txt", "Obrigado por Jogar!", JOptionPane.INFORMATION_MESSAGE);
                     writer.write(relatorioFinal);
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null,"Ocorreu um erro ao tentar gravar arquivos");
