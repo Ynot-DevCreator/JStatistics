@@ -1,71 +1,43 @@
-import java.util.Arrays;
 
 import javax.swing.JOptionPane;
 
 public class App {
-    
+    public static double calcularArea(double comprimento, double largura) {
+        return comprimento * largura;
+    }
+    public static void exibirDados(String nome, String endereco, double areaJardim, String tamanhoJardim) {
+        JOptionPane.showMessageDialog(null, "Nome: "+nome+"\nEndereço: "+endereco+"\nÁrea do Jardim: "+areaJardim+"\nTamanho do Jardim: "+tamanhoJardim);
+    }
+    public static double calcularMedia(double somaArea, int areas) {
+        return somaArea/areas;
+    }
     public static void main(String[] args) throws Exception {
         
-        double areaJardim=0, comprimento, largura;
-        double somaArea =0;
+        double areaJardim, comprimento, largura;
+        double somaArea = 0;
         int areas=0;
         int areasGrandes=0;
-        double[] areasCalculadas = new double[100];
-        int indice = 0;
-        String todasAreas = "";
         while (true) {
+            String nome = JOptionPane.showInputDialog("Informe seu Nome:");
+            String endereco = JOptionPane.showInputDialog("Nos informe seu endereço:");
             comprimento = Double.parseDouble(JOptionPane.showInputDialog(null,"Comprimento do Jardim: "));
             largura = Double.parseDouble(JOptionPane.showInputDialog(null,"Largura do Jardim: "));
             areas++;
-            String[] tamanho = {"Pequeno","Grande"};
-            areaJardim = comprimento*largura;
+            
+            areaJardim = calcularArea(comprimento, largura);
 
-            areasCalculadas[indice] = areaJardim;
-            indice++;
-
-            if (areaJardim < 100) {
-                JOptionPane.showMessageDialog(null, "Area do Jardim: "+areaJardim+"\nTamanho: "+tamanho[0]);
-            }else {
-                JOptionPane.showMessageDialog(null, "Area do Jardim: "+areaJardim+"\nTamanho: "+tamanho[1]);
-                areasGrandes++;
+            String tamanhoJardim = (areaJardim < 100) ? "Pequeno" : "Grande";
+            if (areaJardim >= 100) {
+                  areasGrandes++;
             }
+            exibirDados(nome, endereco, areaJardim, tamanhoJardim);
             somaArea = somaArea + areaJardim;
             int loop = JOptionPane.showConfirmDialog(null, "Deseja Adicionar mais um Terreno? ");
             if (loop != JOptionPane.YES_OPTION) {     
                 break;
             }
-
         }
-        double mediaArea = somaArea/areas;
-        double moda =0;
-        int maiorFrequencia =0;
-        for (int i = 0; i < indice; i++) {
-            todasAreas += "Área " + (i+1) + ": "+areasCalculadas[i] +"m²"+"\n";
-        }
-        JOptionPane.showMessageDialog(null, todasAreas);
-        for (int i = 0; i < areas; i++) {
-            int frequencia=0;
-            for (int j = 0; j < areas; j++) {
-                if (Math.round(areasCalculadas[i]) == Math.round(areasCalculadas[j])) {
-                    frequencia++;
-                }
-            }
-            if (frequencia > maiorFrequencia) {
-                maiorFrequencia =frequencia;
-                moda =areasCalculadas[i];
-            } 
-        }
-        double[] vetorOrdenado = Arrays.copyOf(areasCalculadas, areas); // Copia só os valores usados
-        Arrays.sort(vetorOrdenado);
-
-        // Montar string com áreas ordenadas
-        StringBuilder ordenadas = new StringBuilder();
-        for (double area : vetorOrdenado) {
-            ordenadas.append(String.format("%.2f", area)+"m²").append(" | ");
-        }
-        JOptionPane.showMessageDialog(null, "Moda das Áreas: " + String.format("%.2f", moda)+"m²");
-        JOptionPane.showMessageDialog(null, ordenadas.toString());
-        JOptionPane.showMessageDialog(null, "A média das Áreas: "+String.format("%.2f",mediaArea)+"m²"+"\nÁreas Grandes: "+areasGrandes);
-        
+        double mediaArea = calcularMedia(somaArea, areas);
+        JOptionPane.showMessageDialog(null, "A média das Áreas:"+mediaArea+"m²"+"\nÁreas Grandes: "+areasGrandes);
     }
 }
