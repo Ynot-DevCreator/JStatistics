@@ -98,13 +98,14 @@ public class App {
 
         // Exibe a janela
         grafico.setVisible(true);
-        int fidel = JOptionPane.showConfirmDialog(null, "Possui Cadastro de Fidelidade na Empresa? ");
+        //int fidel = JOptionPane.showConfirmDialog(null, "Possui Cadastro de Fidelidade na Empresa? ");
         String servcontratados = "\nServiço(s) Contratado(s):\nAdubação: "+qtdAdubacao+"\nPoda: "+qtdPoda+"\nManutenção: "+qtdManutencao+"\nPlantio: "+qtdPlantio;
-        if (fidel == JOptionPane.YES_OPTION) {
+        if (contServ >= 10) {
             desconto = "Quantidade de Serviços Contratados: "+contServ+servcontratados+"\nValor Total: R$"+soma+"\nDesconto de: R$-"+desc+"\nValor Total com Desconto: R$"+descsoma;
         }else{
             desconto = "Quantidade de Serviços Contratados: "+contServ+servcontratados+"\nValor Total: R$"+soma;
         }
+        JOptionPane.showMessageDialog(null, "Desconto de Fidelidade Aplicado para\n compras com 10 serviços ou maisx");
         JOptionPane.showMessageDialog(null, desconto);
         double mediaArea = somaArea/areas;
         double moda =0;
